@@ -10,6 +10,10 @@
 #import <CommonCrypto/CommonCryptor.h>
 
 @implementation NSData (AES)
+/**
+ *  加密
+ *
+ */
 - (NSData *)AES256EncryptWithKey:(NSString *)key {//加密
     char keyPtr[kCCKeySizeAES256+1];
     bzero(keyPtr, sizeof(keyPtr));
@@ -31,6 +35,11 @@
     free(buffer);
     return nil;
 }
+
+/**
+ *  解密
+ *
+ */
 - (NSData *)AES256DecryptWithKey:(NSString *)key {//解密
     char keyPtr[kCCKeySizeAES256+1];
     bzero(keyPtr, sizeof(keyPtr));
